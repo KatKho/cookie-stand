@@ -9,6 +9,7 @@ function randomCust(max, min) {
 }
 
 const Seattle = {
+    name: 'Seattle',
     minCust: 23,
     maxCust: 65,
     avgCookie: 6.3,
@@ -19,6 +20,7 @@ const Seattle = {
 };
 
 const Tokyo = {
+    name: 'Tokyo',
     minCust: 3,
     maxCust: 24,
     avgCookie: 1.2,
@@ -29,6 +31,7 @@ const Tokyo = {
 };
 
 const Dubai = {
+    name: 'Dubai',
     minCust: 11,
     maxCust: 38,
     avgCookie: 3.7,
@@ -39,6 +42,7 @@ const Dubai = {
 };
 
 const Paris = {
+    name: 'Paris',
     minCust: 20,
     maxCust: 38,
     avgCookie: 2.3,
@@ -49,6 +53,7 @@ const Paris = {
 };
 
 const Lima = {
+    name: 'Lima',
     minCust: 2,
     maxCust: 16,
     avgCookie: 4.6,
@@ -63,8 +68,6 @@ storeLocation.push(Tokyo);
 storeLocation.push(Dubai);
 storeLocation.push(Paris);
 storeLocation.push(Lima);
-
-console.log(storeLocation);
 
 for (let i = 0; i < storeLocation.length; i++) {
     let currentLocation = storeLocation[i];
@@ -89,5 +92,22 @@ for (let i = 0; i < storeLocation.length; i++) {
     currentLocation.location.push('Total: ' + sum + ' cookies');
 }
 
+function createHTML(elementToCreate, contentToAdd, elementToAddTo) {
+    let element = document.createElement(elementToCreate);
+    element.textContent += contentToAdd;
+    elementToAddTo.appendChild(element);
+  }
 
-console.log(storeLocation);
+const sectionElement = document.createElement('section');
+document.body.appendChild(sectionElement);
+
+for (let i = 0; i < storeLocation.length; i++) {
+    let currentLocation = storeLocation[i];
+    createHTML('ul', currentLocation.name, sectionElement);
+    const unListElement = document.createElement('ul');
+    sectionElement.appendChild(unListElement);
+
+    for (let j = 0; j < currentLocation.location.length; j++) {
+        createHTML('li', currentLocation.location[j], unListElement);
+    }
+}
