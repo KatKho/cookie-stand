@@ -1,0 +1,40 @@
+h1 {
+    font-family: 'Lato', sans-serif;
+    color: #74BDCB;
+    text-shadow: 1px 1px 2px #FFA384, 0 0 1em black, 0 0 0.2em blue;
+}
+
+h1 {
+    text-align: center;
+}
+
+table {
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: center;
+    background-color: #E7F2F8;;
+    border: thin solid #74BDCB;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 20px;
+    
+}
+
+#table-head {
+    background-color:#74BDCB;
+}
+
+#table-body  {
+    background-color:#abe9f5;
+}
+#table-footer {
+    background-color:#74BDCB;
+}
+
+body {
+    background-color: #FFA384;
+    text-align: center;
+}
+
+img {
+    width: 9.5%;
+}
