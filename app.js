@@ -3,9 +3,8 @@
 
 const storeLocation = [];
 
-function randomCust(max, min) {
-    let randomCustNum = Math.floor(Math.random() * (max - min + 1) + min);
-    return randomCustNum;
+function randomCust() {
+    return (Math.floor(Math.random() * (this.maxCust - this.minCust + 1) + this.minCust));
 }
 
 const Seattle = {
@@ -13,10 +12,8 @@ const Seattle = {
     minCust: 23,
     maxCust: 65,
     avgCookie: 6.3,
-    random: function() {
-        return randomCust(this.maxCust, this.minCust);
-    },
-    location: []
+    random: randomCust,
+    sales: []
 };
 
 const Tokyo = {
@@ -24,10 +21,8 @@ const Tokyo = {
     minCust: 3,
     maxCust: 24,
     avgCookie: 1.2,
-    random: function() {
-        return randomCust(this.maxCust, this.minCust);
-    },
-    location: []
+    random: randomCust,
+    sales: []
 };
 
 const Dubai = {
@@ -35,10 +30,8 @@ const Dubai = {
     minCust: 11,
     maxCust: 38,
     avgCookie: 3.7,
-    random: function() {
-        return randomCust(this.maxCust, this.minCust);
-    },
-    location: []
+    random: randomCust,
+    sales: []
 };
 
 const Paris = {
@@ -46,10 +39,8 @@ const Paris = {
     minCust: 20,
     maxCust: 38,
     avgCookie: 2.3,
-    random: function() {
-        return randomCust(this.maxCust, this.minCust);
-    },
-    location: []
+    random: randomCust,
+    sales: []
 };
 
 const Lima = {
@@ -57,17 +48,11 @@ const Lima = {
     minCust: 2,
     maxCust: 16,
     avgCookie: 4.6,
-    random: function() {
-        return randomCust(this.maxCust, this.minCust);
-    },
-    location: []
+    random: randomCust,
+    sales: []
 };
 
-storeLocation.push(Seattle);
-storeLocation.push(Tokyo);
-storeLocation.push(Dubai);
-storeLocation.push(Paris);
-storeLocation.push(Lima);
+storeLocation.push(Seattle, Tokyo, Dubai, Paris, Lima);
 
 for (let i = 0; i < storeLocation.length; i++) {
     let currentLocation = storeLocation[i];
@@ -76,20 +61,20 @@ for (let i = 0; i < storeLocation.length; i++) {
     let sum = 0;
     for (let j = 6; j <= amHours; j++) {
         let cookies = Math.round(currentLocation.random() * currentLocation.avgCookie);
-        currentLocation.location.push( j + 'am: ' + cookies + ' cookies');
+        currentLocation.sales.push( j + 'am: ' + cookies + ' cookies');
         sum += cookies;
     }
     for (let j = 12; j === 12; j++) {
         let cookies = Math.round(currentLocation.random() * currentLocation.avgCookie);
-        currentLocation.location.push( j + 'pm: ' + cookies + ' cookies');
+        currentLocation.sales.push( j + 'pm: ' + cookies + ' cookies');
         sum += cookies;
     }
     for (let j = 1; j <= pmHours; j++) {
         let cookies = Math.round(currentLocation.random() * currentLocation.avgCookie);
-        currentLocation.location.push( j + 'pm: ' + cookies + ' cookies');
+        currentLocation.sales.push( j + 'pm: ' + cookies + ' cookies');
         sum += cookies;
     }
-    currentLocation.location.push('Total: ' + sum + ' cookies');
+    currentLocation.sales.push('Total: ' + sum + ' cookies');
 }
 
 function createHTML(elementToCreate, contentToAdd, elementToAddTo) {
@@ -103,11 +88,11 @@ document.body.appendChild(sectionElement);
 
 for (let i = 0; i < storeLocation.length; i++) {
     let currentLocation = storeLocation[i];
-    createHTML('ul', currentLocation.name, sectionElement);
+    createHTML('h3', currentLocation.name, sectionElement);
     const unListElement = document.createElement('ul');
     sectionElement.appendChild(unListElement);
 
-    for (let j = 0; j < currentLocation.location.length; j++) {
-        createHTML('li', currentLocation.location[j], unListElement);
+    for (let j = 0; j < currentLocation.sales.length; j++) {
+        createHTML('li', currentLocation.sales[j], unListElement);
     }
 }
