@@ -3,54 +3,72 @@
 
 const storeLocation = [];
 
-function randomCust() {
-    return (Math.floor(Math.random() * (this.maxCust - this.minCust + 1) + this.minCust));
+// function randomCust() {
+//     return (Math.floor(Math.random() * (this.maxCust - this.minCust + 1) + this.minCust));
+// }
+
+function CookieStand(name, minCust, maxCust, avgCookie, sales) {
+    this.name = name;
+    this.minCust = minCust;
+    this.maxCust = maxCust;
+    this.avgCookie = avgCookie;
+    this.sales = sales;
 }
 
-const Seattle = {
-    name: 'Seattle',
-    minCust: 23,
-    maxCust: 65,
-    avgCookie: 6.3,
-    random: randomCust,
-    sales: []
+CookieStand.prototype.random = function () {
+    return (Math.floor(Math.random() * (this.maxCust - this.minCust + 1) + this.minCust));
 };
 
-const Tokyo = {
-    name: 'Tokyo',
-    minCust: 3,
-    maxCust: 24,
-    avgCookie: 1.2,
-    random: randomCust,
-    sales: []
-};
+let Seattle = new CookieStand('Seattle', 23, 65, 6.3, []);
+let Tokyo = new CookieStand('Tokyo', 3, 24, 1.2, []);
+let Dubai = new CookieStand('Dubai', 11, 38, 3.7, []);
+let Paris = new CookieStand('Paris', 20, 38, 2.3, []);
+let Lima = new CookieStand('Lima', 2, 16, 4.6, []);
 
-const Dubai = {
-    name: 'Dubai',
-    minCust: 11,
-    maxCust: 38,
-    avgCookie: 3.7,
-    random: randomCust,
-    sales: []
-};
+// const Seattle = {
+//     name: 'Seattle',
+//     minCust: 23,
+//     maxCust: 65,
+//     avgCookie: 6.3,
+//     random: randomCust,
+//     sales: []
+// };
 
-const Paris = {
-    name: 'Paris',
-    minCust: 20,
-    maxCust: 38,
-    avgCookie: 2.3,
-    random: randomCust,
-    sales: []
-};
+// const Tokyo = {
+//     name: 'Tokyo',
+//     minCust: 3,
+//     maxCust: 24,
+//     avgCookie: 1.2,
+//     random: randomCust,
+//     sales: []
+// };
 
-const Lima = {
-    name: 'Lima',
-    minCust: 2,
-    maxCust: 16,
-    avgCookie: 4.6,
-    random: randomCust,
-    sales: []
-};
+// const Dubai = {
+//     name: 'Dubai',
+//     minCust: 11,
+//     maxCust: 38,
+//     avgCookie: 3.7,
+//     random: randomCust,
+//     sales: []
+// };
+
+// const Paris = {
+//     name: 'Paris',
+//     minCust: 20,
+//     maxCust: 38,
+//     avgCookie: 2.3,
+//     random: randomCust,
+//     sales: []
+// };
+
+// const Lima = {
+//     name: 'Lima',
+//     minCust: 2,
+//     maxCust: 16,
+//     avgCookie: 4.6,
+//     random: randomCust,
+//     sales: []
+// };
 
 storeLocation.push(Seattle, Tokyo, Dubai, Paris, Lima);
 
