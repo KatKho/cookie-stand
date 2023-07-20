@@ -17,6 +17,32 @@
         <a href="pictures.html">Gallery</a>
     </header>
     <main>
+        <form id="stand-form">
+            <fieldset>
+                <legend>Create A New Cookie Stand</legend>
+                <div class="stand-input">
+                    <label for="stand-location">Stand Location</label>
+                    <input id="stand-location" type="text" name="location"
+                    placeholder="City" required>
+                </div>
+                <div class="stand-input">
+                    <label for="minCust">Minimum number of customers</label>
+                    <input id="minCust" type="Number" name="minCust"
+                    placeholder="Number" required>
+                </div>
+                <div class="stand-input">
+                    <label for="maxCust">Maximum number of customers</label>
+                    <input id="manCust" type="Number" name="maxCust"
+                    placeholder="Number" required>
+                </div>
+                <div class="stand-input">
+                    <label for="avgCookie">Average number of cookies purchased</label>
+                    <input id="avgCookie" type="Number" name="avgCookie"
+                    placeholder="Number" required>
+                </div>
+                <button type="submit">Create Cookie Stand</button>
+            </fieldset>
+          </form>
         <table>
             <thead id="table-head">
             </thead>
