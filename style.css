@@ -8,17 +8,6 @@ h1 {
     text-align: center;
 }
 
-table {
-    font-family: Arial, Helvetica, sans-serif;
-    text-align: center;
-    background-color: #E7F2F8;;
-    border: thin solid #74BDCB;
-    margin-left: auto;
-    margin-right: auto;
-    margin-top: 20px;
-    
-}
-
 #table-head {
     background-color:#74BDCB;
 }
@@ -35,6 +24,61 @@ body {
     text-align: center;
 }
 
-img {
+main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: larger;
+}
+
+#index {
+    color: #74BDCB;
+    text-shadow: 1px 1px 2px #FFA384, 0 0 1em black, 0 0 0.2em blue;
+}
+
+main img {
+    border-radius: 30px;
+    width: 30%;
+    margin: 10px;;
+}
+
+.front-page {
     width: 9.5%;
+}
+
+a {
+text-decoration: none;
+color: #74BDCB;
+text-shadow: 1px 1px 2px #FFA384, 0 0 1em black, 0 0 0.2em blue;
+font-size: large;
+margin-right: 10px;
+}
+
+#links {
+    margin-bottom: 10px;
+}
+
+footer {
+    color: #74BDCB;
+    text-shadow: 1px 1px 2px #FFA384, 0 0 1em black, 0 0 0.2em blue;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+}
+table {
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: center;
+    background-color: #E7F2F8;;
+    border: thin solid #74BDCB;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 20px;   
+}
+
+li {
+    margin: 10px;
+}
+
+#bottom {
+    margin-top: 20px;
 }
