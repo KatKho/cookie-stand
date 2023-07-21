@@ -1,6 +1,6 @@
 h1 {
     font-family: 'Lato', sans-serif;
-    color: #74BDCB;
+    color: #05076c;
     text-shadow: 1px 1px 2px #FFA384, 0 0 1em black, 0 0 0.2em blue;
 }
 
@@ -22,6 +22,8 @@ h1 {
 body {
     background-color: #FFA384;
     text-align: center;
+    margin: 0;
+    padding: 0;
 }
 
 main {
@@ -32,7 +34,7 @@ main {
 }
 
 #index {
-    color: #74BDCB;
+    color: #05076c;
     text-shadow: 1px 1px 2px #FFA384, 0 0 1em black, 0 0 0.2em blue;
 }
 
@@ -48,7 +50,7 @@ main img {
 
 a {
 text-decoration: none;
-color: #74BDCB;
+color: #05076c;
 text-shadow: 1px 1px 2px #FFA384, 0 0 1em black, 0 0 0.2em blue;
 font-size: large;
 margin-right: 10px;
@@ -59,11 +61,12 @@ margin-right: 10px;
 }
 
 footer {
-    color: #74BDCB;
+    color: #05076c;
     text-shadow: 1px 1px 2px #FFA384, 0 0 1em black, 0 0 0.2em blue;
     position: absolute;
     bottom: 0;
     width: 100%;
+    background-color: #EFE7BC;
 }
 
 table {
@@ -125,4 +128,15 @@ label {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
+}
+
+
+header {
+    background-color: #EFE7BC;
+    width: 100%;
+}
+
+ul {
+    display: flex;
+    list-style:none;
 }
