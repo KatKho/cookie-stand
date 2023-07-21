@@ -15,33 +15,19 @@ function CookieStand(location, minCust, maxCust, avgCookie, sales) {
     this.sales = sales;
 }
 
-CookieStand.prototype.sales = function () {
-        let hours = 14;
-        for (let i = 0; i < storeValues.length; i++) {
-            let currentLocation = storeValues[i];
-            let dailyTotal = 0;
-            for (let j = 0; j < hours; j++) {
-                let cookies = Math.floor(currentLocation.random() * currentLocation.avgCookie);
-                currentLocation.sales.push(cookies);
-                dailyTotal += cookies;
-            }
-            currentLocation.sales.push(dailyTotal);
+CookieStand.prototype.calculateSales = function () {
+    let hours = 14;
+    for (let i = 0; i < storeValues.length; i++) {
+        let currentLocation = storeValues[i];
+        let dailyTotal = 0;
+        for (let j = 0; j < hours; j++) {
+            let cookies = Math.floor(currentLocation.random() * currentLocation.avgCookie);
+            currentLocation.sales.push(cookies);
+            dailyTotal += cookies;
         }
-    };
-
-    CookieStand.prototype.calculateSales = function () {
-        let hours = 14;
-        for (let i = 0; i < storeValues.length; i++) {
-            let currentLocation = storeValues[i];
-            let dailyTotal = 0;
-            for (let j = 0; j < hours; j++) {
-                let cookies = Math.floor(currentLocation.random() * currentLocation.avgCookie);
-                currentLocation.sales.push(cookies);
-                dailyTotal += cookies;
-            }
             currentLocation.sales.push(dailyTotal);
-        }
-    };
+    }
+};
 
 CookieStand.prototype.random = function () {
     return (Math.floor(Math.random() * (this.maxCust - this.minCust + 1) + this.minCust));
